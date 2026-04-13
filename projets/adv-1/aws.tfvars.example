@@ -1,2 +1,7 @@
-access_key=""
-secret_key=""
+# NE JAMAIS COMITTER CE FICHIER Dans Git -> À mettre dans .gitignore -> ajouter cette ligne dans .gitignore:
+# *.tfvars
+
+access_key="ACCESS_KEY"
+secret_key="SECRET_KEY"
+saz_ip="MY_IP"
+
