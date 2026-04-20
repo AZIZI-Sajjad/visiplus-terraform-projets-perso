@@ -1,0 +1,8 @@
+# NE JAMAIS COMITTER CE FICHIER Dans Git -> À mettre dans .gitignore -> ajouter cette ligne dans .gitignore:
+# *.tfvars
+
+access_key="ACCESS_KEY"
+secret_key="SECRET_KEY"
+saz_ip="MY_IP"
+ec2_hostname="HOSTNAME"
+app_name="APP_NAME"
