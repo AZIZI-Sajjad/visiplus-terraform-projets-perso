@@ -1,22 +1,22 @@
 ### Basic
-```
+```bash
 Le minimum possible
 ```
 
 
 ### Adv
-```
+```bash
 Un petit projet, de création de vps et installation de l'OS
 ```
 
 
 ### adv-1 : apache-php
-```
+```bash
 https://github.com/docker/awesome-compose/tree/master/apache-php
 ```
 
 ### adv-2 : react-express-mysql
-```
+```bash
 https://github.com/docker/awesome-compose/tree/master/react-express-mysql
 
 Tests : 
@@ -26,7 +26,7 @@ App name dans la variable : app_name
 
 
 ### adv-3 : wordpress-mysql
-```
+```bash
 https://github.com/docker/awesome-compose/tree/master/wordpress-mysql
 
 Test : 
@@ -36,7 +36,7 @@ Passer le script d'installation de docker et docker compose un fichier de script
 
 
 ### adv-4 : wordpress-mysql
-```
+```bash
 https://github.com/docker/awesome-compose/tree/master/wordpress-mysql
 
 Test : 
@@ -45,7 +45,22 @@ Passer le script d'installation de docker et docker compose un Template avec des
 ```
 
 
----
+### cv-online
+```bash
+installer mon cv en ligne sur le vps ec2 AWS
+projet de mon cv sur gitlab.com : https://gitlab.com/AZIZI-Sajjad/cv 
+```
+
+
+
+### openvpn
+```bash
+Installer un serveur openvpn sur le vps ec2 AWS
+
+```
+
+
+---bash
 # Commandes de diagnostique
 ---
 
