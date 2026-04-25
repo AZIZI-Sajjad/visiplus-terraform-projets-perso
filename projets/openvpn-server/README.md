@@ -147,6 +147,7 @@ while true; do
     sudo ss -tulpn | grep -Ei "443|1191"
     printf '%0.s-' {1..133}; echo
     sudo /home/ubuntu/openvpn-install/openvpn-install.sh client list
+    printf '%0.s-' {1..133}; echo
     sleep 2
 done
 ```

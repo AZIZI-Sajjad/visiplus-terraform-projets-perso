@@ -154,6 +154,23 @@ resource "aws_security_group" "app_server_live_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  ingress {
+    # Description de la règle
+    description = "Allow openvpn (port UDP ${var.openvpn_port}) from any ip adress"
+
+    # Port source
+    from_port = var.openvpn_port
+
+    # Port destination
+    to_port = var.openvpn_port
+
+    # Protocole utilisé
+    protocol = "udp"
+
+    # Autoriser depuis toutes les IP
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
     # Autoriser tout le trafic sortant
   egress {
     # Description de la règle
