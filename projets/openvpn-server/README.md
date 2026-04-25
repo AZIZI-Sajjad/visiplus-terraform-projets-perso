@@ -1,10 +1,22 @@
 Et voici la version ultra courte des **commandes vraiment utiles** :
 
+```mermaid
+graph LR
+  A[Phone] -->|Encrypted| VPN
+  B[Laptop] -->|Encrypted| VPN
+  C[Computer] -->|Encrypted| VPN
+
+  VPN[OpenVPN Server]
+
+  VPN --> I[Internet]
+```
+
 ```bash
 # Using Gitlab CICD variables in Terrform
 
 https://medium.com/@amittidke/using-gitlab-cicd-variables-in-terrform-a21c011faa0a
 ```
+
 
 ```bash
 ## ----------------------------------------------------------------
@@ -151,3 +163,10 @@ while true; do
     sleep 2
 done
 ```
+
+
+{ openvpn_username = "sajjad", openvpn_password = "hZkFFyE%5Q#MV&r&" },
+{ openvpn_username = "sepideh", openvpn_password = "S6c9Z2+?X3QNeP5%" },
+{ openvpn_username = "sahar", openvpn_password = "C=Jn9N23U4uWxEBG" },
+{ openvpn_username = "ali", openvpn_password = "#c@=4*92a&Z*&aUf" },
+{ openvpn_username = "mohamad", openvpn_password = "zatB6VJT=tZ%2uXc" },
