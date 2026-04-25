@@ -38,13 +38,19 @@ variable "saz_ip" {
 # Configuration du provider AWS
 provider "aws" {
   # Région AWS utilisée
-  region = "eu-west-3"
-
+  region = var.aws_region
+ 
   # Clé d'accès AWS
   access_key = var.access_key
 
   # Clé secrète AWS
   secret_key = var.secret_key
+}
+
+# Variable pour l'IP à autoriser
+variable "aws_region" {
+  # Type de la variable
+  type = string
 }
 
 # Variable pour l'IP à autoriser
@@ -69,6 +75,11 @@ variable "openvpn_clients" {
     sensitive = true
 }
 
+# Variable pour définir le port d'openvpn
+variable "openvpn_port" {
+  # Type de la variable
+  type = number
+}
 
 # Recherche de l'image Ubuntu la plus récente
 data "aws_ami" "ubuntu" {
@@ -125,37 +136,19 @@ resource "aws_security_group" "app_server_live_sg" {
     cidr_blocks = [var.saz_ip]
   }
 
-    # Autoriser port openvpn TCP 1194 depuis n'importe quelle IP
+  # Autoriser port openvpn (port TCP ${var.openvpn_port}) depuis n'importe quelle IP
   ingress {
     # Description de la règle
-    description = "Allow openvpn (port TCP 1194) from any ip adress"
+    description = "Allow openvpn (port TCP ${var.openvpn_port}) from any ip adress"
 
     # Port source
-    from_port = 1194
+    from_port = var.openvpn_port
 
     # Port destination
-    to_port = 1194
+    to_port = var.openvpn_port
 
     # Protocole utilisé
     protocol = "tcp"
-
-    # Autoriser depuis toutes les IP
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-    # Autoriser port openvpn UDP 1194 depuis n'importe quelle IP
-  ingress {
-    # Description de la règle
-    description = "Allow openvpn (port UDP 1194) from any ip adress"
-
-    # Port source
-    from_port = 1194
-
-    # Port destination
-    to_port = 1194
-
-    # Protocole utilisé
-    protocol = "udp"
 
     # Autoriser depuis toutes les IP
     cidr_blocks = ["0.0.0.0/0"]
@@ -200,6 +193,7 @@ resource "aws_instance" "app_server_live" {
   user_data = templatefile("${path.module}/templates/install-openvpn-server.sh", {
     openvpn_clients = var.openvpn_clients
     ec2_hostname = var.ec2_hostname
+    openvpn_port = var.openvpn_port
     })
 
   # Tags de l'instance

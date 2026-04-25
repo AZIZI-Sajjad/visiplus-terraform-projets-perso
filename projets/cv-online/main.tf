@@ -59,6 +59,32 @@ variable "app_name" {
   type = string
 }
 
+
+## Ajouter les variables en haut du fichier (ou dans variables.tf)
+variable "gitlab_private_key_path" {
+  type = string
+  default = "~/.ssh/gitlab_rsa"
+}
+
+variable "gitlab_repo_url" {
+  type = string
+}
+
+variable "project_directory" {
+  type = string
+}
+
+
+variable "build_directory" {
+  type = string
+}
+
+
+variable "deploy_directory" {
+  type = string
+}
+
+
 # Recherche de l'image Ubuntu la plus récente
 data "aws_ami" "ubuntu" {
   # Prendre l'AMI la plus récente correspondant au filtre
@@ -168,11 +194,28 @@ resource "aws_instance" "app_server_live" {
   # Association du security group à l'instance
   vpc_security_group_ids = [aws_security_group.app_server_live_sg.id]
 
-  # Script d'installation contenant des variables Terraform, injectées via templatefile() car file() ne fait aucune interpolation
-  user_data = templatefile("${path.module}/templates/install-docker-and-compose-project.sh", {
+## Encoder le script en base64 pour AWS
+  user_data_base64 = base64encode(
+    templatefile("${path.module}/templates/git-clone-install-projetc.sh", {
+      ## Contenu de la clé privée locale
+      private_key = file(var.gitlab_private_key_path)
+      ## URL du repo GitLab
+      gitlab_repo_url = var.gitlab_repo_url
+      ## Répertoire destination sur l'instance
+      project_directory = var.project_directory
+      ## HostName du vps
       ec2_hostname = var.ec2_hostname
-      app_name     = var.app_name
+
+      build_directory = var.build_directory
+      deploy_directory = var.deploy_directory
+
     })
+  )
+  # # Script d'installation contenant des variables Terraform, injectées via templatefile() car file() ne fait aucune interpolation
+  # user_data = templatefile("${path.module}/templates/install-docker-and-compose-project.sh", {
+  #     ec2_hostname = var.ec2_hostname
+  #     app_name     = var.app_name
+  #   })
 
   # Tags de l'instance
   tags = {

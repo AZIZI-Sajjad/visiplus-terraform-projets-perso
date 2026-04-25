@@ -144,8 +144,9 @@ sed -i -e '$a\' src/i18n/fr-FR/index.js
 while true; do
     ps aux | grep -Ei "git|apt|npm"
     printf '%0.s-' {1..133}; echo
-    ss -tulpn | grep 8080
+    sudo ss -tulpn | grep -Ei "443|1191"
     printf '%0.s-' {1..133}; echo
+    sudo /home/ubuntu/openvpn-install/openvpn-install.sh client list
     sleep 2
 done
 ```

@@ -26,9 +26,9 @@ sudo apt install -y docker.io git curl
 cd /home/ubuntu/
 git clone https://github.com/angristan/openvpn-install.git
 cd openvpn-install
-## Installation du serveur OpenVPN en mode non-interactif
+## Installation du serveur OpenVPN en mode non-interactif avec le port tcp 443
 export AUTO_INSTALL=y
-sudo ./openvpn-install.sh install
+sudo ./openvpn-install.sh install --protocol tcp --port ${openvpn_port}
 
 ## Liste des clients injectée par Terraform via templatefile + jsonencode
 CLIENTS_JSON='${jsonencode(openvpn_clients)}'
