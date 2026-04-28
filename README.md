@@ -44,6 +44,12 @@ Passer le script d'installation de docker et docker compose un Template avec des
 # Script d'installation contenant des variables Terraform, injectées via templatefile() car file() ne fait aucune interpolation
 ```
 
+### adv-5
+```bash
+# À FINIR
+Installer un VPS Gratuit chez ORACLE Cloude
+-> Plus de fichier main.tf, tout est mis dans des fichiers séparés
+```
 
 ### cv-online
 ```bash
@@ -53,10 +59,16 @@ projet de mon cv sur gitlab.com : https://gitlab.com/AZIZI-Sajjad/cv
 
 
 
-### openvpn
+### openvpn-server
 ```bash
 Installer un serveur openvpn sur le vps ec2 AWS
 
+```
+
+### openvpn-server-2
+```bash
+Installer un serveur openvpn sur le vps ec2 AWS
+-> Plus de fichier main.tf, tout est mis dans des fichiers séparés
 ```
 
 

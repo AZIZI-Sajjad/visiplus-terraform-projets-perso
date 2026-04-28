@@ -1,0 +1,11 @@
+# Renommer ce fichier en terraform.tfvars et compléter avec tes valeurs
+# Ne JAMAIS committer terraform.tfvars dans Git
+
+tenancy_ocid        = "ocid1.tenancy.oc1..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+user_ocid           = "ocid1.user.oc1..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+fingerprint         = "aa:bb:cc:dd:ee:ff:00:11:22:33:44:55:66:77:88:99"
+private_key_path    = "~/.oci/oci_api_key.pem"
+region              = "eu-paris-1"
+compartment_ocid    = "ocid1.compartment.oc1..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+ssh_public_key_path = "~/.ssh/oracle_vps.pub"
+instance_name       = "srv-free-vps"
