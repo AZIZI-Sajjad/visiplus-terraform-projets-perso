@@ -60,9 +60,7 @@ Installer un serveur openvpn sur le vps ec2 AWS
 ```
 
 
----bash
-# Commandes de diagnostique
----
+### Commandes de diagnostique
 
 ### Vérifier le statut global de cloud-init (done, running, error)
 
