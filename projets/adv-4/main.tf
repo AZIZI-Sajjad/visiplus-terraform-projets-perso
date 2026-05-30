@@ -133,7 +133,7 @@ resource "aws_security_group" "app_server_live_sg" {
   }
 
 
-    # Autoriser tout le trafic sortant
+  # Autoriser tout le trafic sortant
   egress {
     # Description de la règle
     description = "Allow all outbound traffic"
@@ -170,9 +170,9 @@ resource "aws_instance" "app_server_live" {
 
   # Script d'installation contenant des variables Terraform, injectées via templatefile() car file() ne fait aucune interpolation
   user_data = templatefile("${path.module}/templates/install-docker-and-compose-project.sh", {
-      ec2_hostname = var.ec2_hostname
-      app_name     = var.app_name
-    })
+    ec2_hostname = var.ec2_hostname
+    app_name     = var.app_name
+  })
 
   # Tags de l'instance
   tags = {
