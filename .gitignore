@@ -186,3 +186,6 @@ terraform.tfstate
 terraform.tfstate.backup
 .terraform.lock.hcl
 .terraform.*
+
+*.ovpn
+openvpn-config-file

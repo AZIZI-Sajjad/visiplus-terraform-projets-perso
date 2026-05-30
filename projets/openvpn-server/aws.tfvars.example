@@ -4,15 +4,32 @@
 access_key="access_key"
 secret_key="secret_key"
 saz_ip="IP_ADDRESS"
-ec2_hostname="vps-ec2-hostname"
-app_name="hostname"
+ec2_hostname="vps-ec2-openvpn-server"
+app_name="vps-ec2-openvpn-server"
+# Region : Stockholm
+aws_region="eu-north-1"
 
 
-# Définition des utilisateurs OpenVPN via une liste de maps (list of objects)
+## Définition des utilisateurs OpenVPN via une liste de maps (list of objects)
 openvpn_clients = [
-{ openvpn_username = "openvpn_username_1", openvpn_password = "openvpn_password_1" },
-{ openvpn_username = "openvpn_username_2", openvpn_password = "openvpn_password_2" },
-{ openvpn_username = "openvpn_username_3", openvpn_password = "openvpn_password_3" },
-{ openvpn_username = "openvpn_username_4", openvpn_password = "openvpn_password_4" },
-{ openvpn_username = "openvpn_username_5", openvpn_password = "openvpn_password_5" },
+  {
+    openvpn_username = "openvpn_username_1"
+    openvpn_password = "openvpn_password_1"
+  },
+  {
+    openvpn_username = "openvpn_username_2"
+    openvpn_password = "openvpn_password_2"
+  },
+  {
+    openvpn_username = "openvpn_username_3"
+    openvpn_password = "openvpn_password_3"
+  },
+  {
+    openvpn_username = "openvpn_username_4"
+    openvpn_password = "openvpn_password_4"
+  },
+  {
+    openvpn_username = "openvpn_username_5"
+    openvpn_password = "openvpn_password_5"
+  },
 ]

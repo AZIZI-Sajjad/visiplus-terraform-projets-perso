@@ -1,6 +1,17 @@
 Et voici la version ultra courte des **commandes vraiment utiles** :
 
 ```bash
+# Commandes utiles
+instance_public_ip=$(terraform output instance_public_ip)
+instance_public_ip=$(echo $instance_public_ip | tr -d '"')
+echo $instance_public_ip
+ssh -i ~/.ssh/aws-ci-cd-deploy ubuntu@$instance_public_ip
+cd openvpn-config-file/
+scp -i ~/.ssh/aws-ci-cd-deploy ubuntu@$instance_public_ip:/home/ubuntu/openvpn-config-file/* .
+cp *.ovpn /mnt/d/wsl-files/Ubuntu/sdu/openvpn-config-file
+```
+
+```bash
 # main.tf : contenant tout 
 # Bloc principal Terraform
 terraform {

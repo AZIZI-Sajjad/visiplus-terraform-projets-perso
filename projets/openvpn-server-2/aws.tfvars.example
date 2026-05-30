@@ -4,8 +4,8 @@
 access_key="access_key"
 secret_key="secret_key"
 saz_ip="IP_ADDRESS"
-ec2_hostname="vps-ec2-hostname"
-app_name="hostname"
+ec2_hostname="vps-ec2-openvpn-server"
+app_name="vps-ec2-openvpn-server"
 
 
 ## Définition des utilisateurs OpenVPN via une liste de maps (list of objects)
