@@ -1,0 +1,12 @@
+# NE JAMAIS COMITTER CE FICHIER Dans Git -> À mettre dans .gitignore -> ajouter cette ligne dans .gitignore:
+# *.tfvars
+
+# OVH:
+endpoint      = "ovh-eu"
+client_id     = "xxxxxxxxx"
+client_secret = "yyyyyyyyy"
+
+zone = "NDD"
+subdomain = "subdomaine_value"
+target = "Target_IP"
+
