@@ -1,0 +1,12 @@
+# NE JAMAIS COMITTER CE FICHIER Dans Git -> À mettre dans .gitignore -> ajouter cette ligne dans .gitignore:
+# *.tfvars
+
+access_key="access_key"
+secret_key="secret_key"
+# Région : Paris
+aws_region ="eu-west-3"
+user_name="user_name_to_create"
+path="path"
+team="team"
+department="department"
+environment="environment"
