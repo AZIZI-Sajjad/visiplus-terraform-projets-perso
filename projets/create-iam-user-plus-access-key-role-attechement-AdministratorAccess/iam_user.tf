@@ -2,7 +2,7 @@
   
 resource "aws_iam_user" "developer" {
   name = var.user_name
-  path = var.path
+  # path = var.path
 
   # Force destroy allows deletion even if the user has non-Terraform-managed resources
   force_destroy = true

@@ -2,6 +2,7 @@
 output "access_key_id" {
   value       = aws_iam_access_key.developer.id
   description = "The access key ID for the service account"
+  sensitive   = true
 }
 
 # Output the secret key (sensitive)

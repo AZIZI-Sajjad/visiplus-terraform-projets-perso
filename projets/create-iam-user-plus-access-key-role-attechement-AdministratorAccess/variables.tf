@@ -22,10 +22,10 @@ variable "aws_region" {
   type = string
 }
 
-# Variable pour le path
-variable "path" {
-  type = string
-}
+# # Variable pour le path
+# variable "path" {
+#   type = string
+# }
 
 # Variable pour le team
 variable "team" {

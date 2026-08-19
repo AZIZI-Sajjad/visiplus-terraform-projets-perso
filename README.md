@@ -131,3 +131,7 @@ for dir in adv-{1..4}; do
 done
 ```
 
+### Purger les dossiers .terraform contenant les fichiers de providers (ça peut prendre de l'espace sur le disque)
+```bash
+find . -type d -name '.terraform' -prune -exec rm -rf {} +
+```
